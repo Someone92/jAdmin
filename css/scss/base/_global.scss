@@ -1,0 +1,78 @@
+.fa { font-family: $fontawesome; }
+
+.clear {
+    clear: both;
+    &:after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body { background-color: #EEEEEE; }
+body, html {
+    font-size: 14px;
+    height: 100%;
+    width: 100%;
+}
+
+a { color: inherit; }
+h3, h4, h5, h6 { font-family: $raleway; letter-spacing: 2px; }
+h1, h2, p, a, li { font-family: $ubuntu; }
+input, select, textarea, button{ font-family:inherit; }
+li { list-style: none; }
+#container {
+    font-size: 0;
+}
+.container {
+    padding: 20px;
+    .dashboard-header {
+        width: 100%;
+        font-size: 1rem;
+        h1 { 
+            font-weight: 300;
+            letter-spacing: 1px;
+            color: #888181;
+        }
+    }
+}
+
+.z-depth-1 { @include box-shadow((0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12))); }
+.z-depth-2 { @include box-shadow((0 8px 17px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19))); }
+.z-depth-3 { @include box-shadow((0 12px 15px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19))); }
+.z-depth-4 { @include box-shadow((0 16px 28px 0 rgba(0,0,0,0.22), 0 25px 55px 0 rgba(0,0,0,0.21))); }
+.z-depth-5 { @include box-shadow((0 27px 24px 0 rgba(0,0,0,0.2), 0 40px 77px 0 rgba(0,0,0,0.22))); }
+
+/* Ripple effect for buttons */
+.ripple {
+  position: absolute;
+  background: rgba(0,0,0,.25);
+  border-radius: 100%;
+  transform: scale(0.2);
+  opacity:0;
+  pointer-events: none;
+  -webkit-animation: ripple .75s ease-out;
+  -moz-animation: ripple .75s ease-out;
+  animation: ripple .75s ease-out;
+}
+
+@-webkit-keyframes ripple {
+  from { opacity:1; }
+  to { transform: scale(2); opacity: 0; }
+}
+
+@-moz-keyframes ripple {
+  from { opacity:1; }
+  to { transform: scale(2); opacity: 0; }
+}   
+
+@keyframes ripple {
+  from { opacity:1; }
+  to { transform: scale(2); opacity: 0; }
+}   

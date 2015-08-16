@@ -1,0 +1,12 @@
+/* $medium-breakpoint =460px */
+@media screen and(max-width: $medium-breakpoint) {
+    /* login.php */
+    #login-form {
+        width: 95%;
+        padding: 20px 20px;
+        @include transform(translateY(-50%));
+        &::before,
+        &::after { content: none; }
+        & > * { @include transform(none); }
+    }
+}

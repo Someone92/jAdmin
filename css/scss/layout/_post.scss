@@ -1,0 +1,128 @@
+.post-container {
+    background: $white;
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px 20px;
+    h2 {
+        font-weight: 200;
+        padding: 0 0 10px 0;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    button, .new-post {
+        margin: 0.3em;
+        padding: 0.8em 1.5em;
+        background-color: #03A9F4;
+        color: white;
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-radius: 3px;
+        border: none; 
+        font-size: 15px;
+        text-align: center;
+        @include transition(0.3s);
+        &:hover { @include box-shadow(1px 6px 15px rgba(0,0,0,0.5)); }
+    }
+    p {
+        
+        input { width: inherit; }
+    }
+    form { margin: 30px 0 0 0; }
+    input, textarea {
+        width: 100%;
+        border: 1px solid #ddd;
+    }
+    input {
+        padding: 5px 10px;
+        &[type="date"] { width: 170px; display: block; }
+        &[type=checkbox]:checked + label { font-weight: bold; }
+    }
+    textarea { height: 100px;resize: vertical; }
+}
+
+table {
+    margin: 30px 0 0 0;
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    tr {
+        margin: 20px;
+        height: 50px;
+        &.td {
+            display: none;
+            &.visible { display: table-row; }
+        }
+        th {
+            border: 1px solid #ddd;
+            border-color: rgba(0,0,0,0.11);
+            border-bottom: 2px solid rgba(0,0,0,0.14);
+            padding: 10px;
+            &:first-child, &:nth-child(3), &:last-child { width: 1px; white-space: nowrap; }
+        }
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            border-color: rgba(0,0,0,0.11);
+            a {
+                margin: 0 10px 0 0;
+                text-decoration: none;
+                color: #adb3b8;
+            }
+            &:last-child { text-align: center; }
+            &:nth-child(3) { width: 1px; white-space: nowrap; }
+            a:hover { color: #03A9F4; }
+        }
+        &:nth-child(even) td { background: #EEEEEE; }
+        &:nth-child(odd) td { background: $white; }
+    }
+}
+
+.post-bottom {
+    width: 100%;
+    font-size: 0;
+    height: 60px;
+    line-height: 60px;
+    .post-showing,
+    .post-page {
+        width: 50%;
+        display: inline-block;
+        font-size: 1rem;
+    }
+    .post-showing {
+        font-size: 0.8rem;
+        .post-entries {
+            display: inline-block;
+            select {
+                border: 1px solid #ddd;
+                padding: 5px;
+            }
+        }
+    }
+    .post-page {
+        text-align: right;
+        font-size: 0;
+        span {
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            border: 1px solid #ddd;
+            padding: 10px;
+            @include transition(all .3s ease);
+            &.active,
+            &:hover {
+                background: #0099ff;
+            }
+        }
+        .disabled {
+            a { 
+                pointer-events: none;
+                cursor: pointer;
+                color: $gray; 
+            }
+        }
+    }
+}
